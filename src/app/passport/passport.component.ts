@@ -10,8 +10,10 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class PassportComponent implements OnInit {
   passportData: IPassport;
-  pictureSrc: string;
-  signatureSrc: string;
+  pictureSrc = 'https://image.flaticon.com/icons/svg/21/21104.svg';
+  signatureSrc =
+    // tslint:disable-next-line: max-line-length
+    'https://www.docsketch.com/assets/vip-signatures/muhammad-ali-signature-6a40cd5a6c27559411db066f62d64886c42bbeb03b347237ffae98b0b15e0005.svg';
   passportForm: FormGroup;
   constructor(private gviveService: GviveService, private fb: FormBuilder) {}
 

@@ -16,7 +16,7 @@ export class GviveService {
     const body = { fromObject: data };
     const options = { params: new HttpParams(body), headers: this.headers };
     return this.http.get(
-      'http://websvr.dalexswift.com/CoreID/GetIdentification',
+      'https://websvr.dalexswift.com/CoreID/GetIdentification',
       options
     );
   }
