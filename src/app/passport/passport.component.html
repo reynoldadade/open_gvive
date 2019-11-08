@@ -1,0 +1,121 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <!-- form in here -->
+      <form [formGroup]="passportForm" (submit)="submitPassport(passportForm)">
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            [formControlName]="'idnumber'"
+            placeholder="Passport Number here"
+          />
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">
+          Check Passport
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <br />
+      <div class="card">
+        <div id="title-area">
+          <p class="text-center">
+            <strong>Republic of Ghana</strong>
+          </p>
+        </div>
+        <div class="row">
+          <div id="image-area" class="col-4">
+            <div style="font-size:xx-small;" class="text-center">
+              Passport/ <em>Passeport</em>
+            </div>
+            <img [src]="pictureSrc" class="rounded" alt="..." />
+            <div style="font-size: xx-small">
+              Holder's signature/ <em>Signature du titulaire</em>
+            </div>
+            <img [src]="signatureSrc" class="rounded" alt="..." />
+          </div>
+          <div id="detail-area" class="col-8">
+            <!-- type table -->
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Type/<em>Type</em></th>
+                  <th scope="col">Country Code/<em>Code de Pays</em></th>
+                  <th scope="col">Passport No/ <em>No de passport</em></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>P</td>
+                  <td>GHA</td>
+                  <td>{{ passportData?.PassportNo }}</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- gender and details table -->
+            <table id="single-details">
+              <tr>
+                <th>Surname/ <em>Nom</em></th>
+              </tr>
+              <tr>
+                <td>{{ passportData?.LastName }}</td>
+              </tr>
+              <tr>
+                <th>Given Name/ <em>Prenoms</em></th>
+              </tr>
+              <tr>
+                <td>{{ passportData?.FirstName }}</td>
+              </tr>
+              <tr>
+                <th>Nationality/ <em>Nationalite</em></th>
+              </tr>
+              <tr>
+                <td>{{ passportData?.Nationality }}</td>
+              </tr>
+              <tr>
+                <th>Date of Birth/ <em>Date de naissance</em></th>
+              </tr>
+              <tr>
+                <td>
+                  {{ passportData?.DateOfBirth }}
+                </td>
+              </tr>
+            </table>
+
+            <!-- sex and location -->
+            <table id="sex-location">
+              <tr>
+                <th>Sex/ <em>Sexe</em></th>
+                <th>Place of Birth/ <em>Lieu de naissance</em></th>
+              </tr>
+              <tr>
+                <td>{{ passportData?.Gender }}</td>
+                <td>{{ passportData?.DateOfBirth }}</td>
+              </tr>
+              <tr>
+                <th>Date of Issue/ <em>Date de Deliverance</em></th>
+                <th>Place of Issue/ <em>Lieu d'amission</em></th>
+              </tr>
+              <tr>
+                <td>{{ passportData?.IssueDate }}</td>
+                <td>{{ passportData?.PlaceOfIssue }}</td>
+              </tr>
+              <tr>
+                <th>Date of Expiry/ <em>Date d'expiration</em></th>
+                <th>Authority/ <em>Authorite</em></th>
+              </tr>
+              <tr>
+                <td>{{ passportData?.ExpiryDate }}</td>
+                <td><strong>PASSPORT OFFICE</strong></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
