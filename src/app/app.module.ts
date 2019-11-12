@@ -7,16 +7,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PassportComponent } from './passport/passport.component';
 import { HttpClientModule } from '@angular/common/http';
+import { VotersComponent } from './voters/voters.component';
+import { NgxBarcodeModule } from 'ngx-barcode';
 
 @NgModule({
-  declarations: [AppComponent, PassportComponent],
+  declarations: [AppComponent, PassportComponent, VotersComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxBarcodeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

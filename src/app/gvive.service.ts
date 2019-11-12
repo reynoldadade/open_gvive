@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -15,9 +16,6 @@ export class GviveService {
   requestForCardDetails(data): Observable<any> {
     const body = { fromObject: data };
     const options = { params: new HttpParams(body), headers: this.headers };
-    return this.http.get(
-      'https://websvr.dalexswift.com/CoreID/GetIdentification',
-      options
-    );
+    return this.http.get(environment.firebase.baseUrl, options);
   }
 }

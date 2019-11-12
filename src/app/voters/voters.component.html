@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+          <div style="border-style: dotted;border-color:lightblue">
+            <p class="d-flex justify-content-center" id="voters-title">
+              <strong
+                ><img
+                  src="../../assets/images/download.png"
+                  width="50"
+                />ELECTORAL COMMISSION OF GHANA</strong
+              >
+              <span style="background-color: black;color: white;"
+                ><strong>VOTER CARD</strong></span
+              >
+            </p>
+            <div class="col-sm-8">
+              <!-- polling staiton table -->
+              <table>
+                <tr>
+                  <td>
+                    <strong> Polling Station Code</strong>
+                  </td>
+                  <td>
+                    Code here
+                  </td>
+                </tr>
+              </table>
+
+              <!-- bar code here -->
+              <ngx-barcode
+                style="width: 2px;"
+                [bc-value]="'code here'"
+                [bc-display-value]="false"
+                [bc-height]="20"
+                [bc-width]="1"
+                [bc-element-type]="'img'"
+                [bc-format]="'CODE39'"
+              ></ngx-barcode>
+              <!-- voter id table -->
+              <table>
+                <tr>
+                  <td>
+                    <strong> Voter ID</strong>
+                  </td>
+                  <td>
+                    Code here
+                  </td>
+                </tr>
+              </table>
+
+              <table>
+                <tr>
+                  <td>Age</td>
+                  <td>Age here</td>
+                </tr>
+                <tr>
+                  <td>Sex</td>
+                  <td>Sex here</td>
+                </tr>
+                <tr>
+                  <td>Registration Date</td>
+                  <td>Date here</td>
+                </tr>
+                <tr>
+                  <td>Name</td>
+                  <td>Name here</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

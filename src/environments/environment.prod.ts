@@ -6,5 +6,6 @@ export const environment = {
   projectId: 'dalex-gvive',
   storageBucket: 'dalex-gvive.appspot.com',
   messagingSenderId: '762045448883',
-  appId: '1:762045448883:web:0cb812eec3861cf414a6c6'
+  appId: '1:762045448883:web:0cb812eec3861cf414a6c6',
+  baseUrl: 'https://websvr.dalexswift.com/CoreID/GetIdentification'
 };
