@@ -19,8 +19,8 @@ export class PassportComponent implements OnInit {
 
   ngOnInit() {
     this.passportForm = this.fb.group({
-      idnumber: ['', Validators.required],
-      idtype: ['passport'],
+      idNumber: ['', Validators.required],
+      idType: ['passport'],
       application: ['FILMS'],
       user: ['testing']
     });
@@ -40,6 +40,7 @@ export class PassportComponent implements OnInit {
   }
 
   submitPassport(form: FormGroup) {
+    console.log(form.value);
     this.getPassportDetails(form.value);
   }
 }

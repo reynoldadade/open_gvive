@@ -14,8 +14,10 @@ export class GviveService {
   constructor(private http: HttpClient) {}
 
   requestForCardDetails(data): Observable<any> {
-    const body = { fromObject: data };
-    const options = { params: new HttpParams(body), headers: this.headers };
-    return this.http.get(environment.firebase.baseUrl, options);
+    // const options = { headers: this.headers, observe: 'response' };
+    return this.http.post(environment.firebase.baseUrl, data, {
+      headers: this.headers
+      // observe: 'response'
+    });
   }
 }
