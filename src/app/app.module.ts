@@ -9,9 +9,23 @@ import { PassportComponent } from './passport/passport.component';
 import { HttpClientModule } from '@angular/common/http';
 import { VotersComponent } from './voters/voters.component';
 import { NgxBarcodeModule } from 'ngx-barcode';
+import { ToastrModule } from 'ngx-toastr';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 @NgModule({
-  declarations: [AppComponent, PassportComponent, VotersComponent],
+  declarations: [
+    AppComponent,
+    PassportComponent,
+    VotersComponent,
+    HomeComponent,
+    LoginComponent,
+    ForgotPasswordComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -19,9 +33,12 @@ import { NgxBarcodeModule } from 'ngx-barcode';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxBarcodeModule
+    NgxBarcodeModule,
+    ToastrModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
