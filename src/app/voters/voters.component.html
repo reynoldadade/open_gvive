@@ -1,21 +1,47 @@
 <div class="container">
   <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <!-- form in here -->
+      <form [formGroup]="voterForm" (submit)="submitPassport(voterForm)">
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            [formControlName]="'idNumber'"
+            placeholder="Voter ID Here"
+          />
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">
+          Check Voters
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- card area -->
+  <div class="row mt-3" *ngIf="search">
     <div class="col-md-6 offset-md-3">
       <div class="card">
-        <div class="card-body">
-          <div style="border-style: dotted;border-color:lightblue">
-            <p class="d-flex justify-content-center" id="voters-title">
-              <strong
-                ><img
-                  src="../../assets/images/download.png"
-                  width="50"
-                />ELECTORAL COMMISSION OF GHANA</strong
-              >
-              <span style="background-color: black;color: white;"
-                ><strong>VOTER CARD</strong></span
-              >
-            </p>
-            <div class="col-sm-8">
+        <div style="border-style: dotted;border-color:lightblue">
+          <!-- header area -->
+          <div class="row">
+            <div class="col">
+              <p class="d-flex justify-content-center" id="voters-title">
+                <strong
+                  ><img
+                    src="../../assets/images/download.png"
+                    width="50"
+                  />ELECTORAL COMMISSION OF GHANA</strong
+                >
+                <span style="background-color: black;color: white;"
+                  ><strong>VOTER CARD</strong></span
+                >
+              </p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-8">
               <!-- polling staiton table -->
               <table>
                 <tr>
@@ -23,7 +49,7 @@
                     <strong> Polling Station Code</strong>
                   </td>
                   <td>
-                    Code here
+                    {{ voterData?.pollingStation }}
                   </td>
                 </tr>
               </table>
@@ -31,7 +57,7 @@
               <!-- bar code here -->
               <ngx-barcode
                 style="width: 2px;"
-                [bc-value]="'code here'"
+                [bc-value]="voterData?.voterID"
                 [bc-display-value]="false"
                 [bc-height]="20"
                 [bc-width]="1"
@@ -45,7 +71,7 @@
                     <strong> Voter ID</strong>
                   </td>
                   <td>
-                    Code here
+                    {{ voterData?.voterID }}
                   </td>
                 </tr>
               </table>
@@ -53,21 +79,24 @@
               <table>
                 <tr>
                   <td>Age</td>
-                  <td>Age here</td>
+                  <td>{{ voterData?.age }}</td>
                 </tr>
                 <tr>
                   <td>Sex</td>
-                  <td>Sex here</td>
+                  <td>{{ voterData?.sex }}</td>
                 </tr>
                 <tr>
                   <td>Registration Date</td>
-                  <td>Date here</td>
+                  <td>{{ voterData?.regDate }}</td>
                 </tr>
                 <tr>
                   <td>Name</td>
-                  <td>Name here</td>
+                  <td>{{ voterData?.fullname }}</td>
                 </tr>
               </table>
+            </div>
+            <div class="col-4">
+              <img [src]="pictureSrc" class="rounded img-fluid" alt="..." />
             </div>
           </div>
         </div>

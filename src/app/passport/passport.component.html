@@ -17,15 +17,18 @@
       </form>
     </div>
   </div>
-  <div class="row">
+
+  <div class="row" *ngIf="search">
     <div class="col-md-6 offset-md-3">
       <br />
       <div class="card">
+        <!-- title area -->
         <div id="title-area">
           <p class="text-center">
             <strong>Republic of Ghana</strong>
           </p>
         </div>
+        <!-- main content area -->
         <div class="row">
           <div id="image-area" class="col-4">
             <div style="font-size:xx-small;" class="text-center">

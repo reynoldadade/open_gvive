@@ -2,3 +2,8 @@
 
 $enable-responsive-font-sizes: true;
 @import 'node_modules/bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
