@@ -33,8 +33,8 @@ export class LoginComponent implements OnInit {
       .then(response => {
         this.loginForm.reset();
         sessionStorage.setItem('email', response.user.email);
-        console.log(response.user.email);
-        // this.router.navigate(['home']);
+        // console.log(response.user.email);
+        this.router.navigate(['home']);
       })
       .catch(error => {
         this.loginForm.reset();

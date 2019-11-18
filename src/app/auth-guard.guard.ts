@@ -1,3 +1,4 @@
+import { GviveService } from './gvive.service';
 import { Injectable } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
@@ -11,7 +12,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthGuardGuard implements CanActivate {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private gviveService: GviveService) {}
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -24,8 +25,10 @@ export class AuthGuardGuard implements CanActivate {
   checkLogin(): boolean {
     const userDetails = sessionStorage.getItem('email');
     if (userDetails) {
+      this.gviveService.showMenu.emit(true);
       return true;
     }
+    this.gviveService.showMenu.emit(false);
     this.router.navigate(['/login']);
     return false;
   }

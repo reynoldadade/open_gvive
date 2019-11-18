@@ -1,3 +1,4 @@
+import { GviveService } from './gvive.service';
 import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
@@ -10,10 +11,19 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'gvive';
   loggedIn = false;
-  constructor(public afAuth: AngularFireAuth, private router: Router) {}
+  constructor(
+    public afAuth: AngularFireAuth,
+    private router: Router,
+    private gviveService: GviveService
+  ) {
+    this.gviveService.showMenu.subscribe(
+      (value: boolean) => (this.loggedIn = value)
+    );
+  }
 
   logout() {
     this.afAuth.auth.signOut();
+    this.gviveService.showMenu.emit(false);
     this.router.navigate(['login']);
     sessionStorage.clear();
   }
