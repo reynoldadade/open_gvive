@@ -12,6 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 export class VotersComponent implements OnInit {
   voterData: IVoter;
   search = false;
+  spin = false;
   pictureSrc = 'https://image.flaticon.com/icons/svg/21/21104.svg';
   voterForm: FormGroup;
   constructor(
@@ -31,6 +32,7 @@ export class VotersComponent implements OnInit {
 
   getPassportDetails(data) {
     this.search = false;
+    this.spin = true;
     this.gviveService.requestForCardDetails(data).subscribe(
       response => {
         if (!response.result.pollingStation) {
@@ -41,10 +43,12 @@ export class VotersComponent implements OnInit {
           this.pictureSrc = `data:image/png;base64,${response.result.picture}`;
           this.search = true;
         }
+        this.spin = false;
       },
       err => {
         console.log(err);
         this.toastr.error('Failed to connect to server');
+        this.spin = false;
       }
     );
   }

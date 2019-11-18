@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   passwordType = 'password';
   iconType = 'fas fa-eye-slash';
+  spin = false;
   constructor(
     public afAuth: AngularFireAuth,
     private fb: FormBuilder,
@@ -28,6 +29,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(form: FormGroup) {
+    this.spin = true;
     this.afAuth.auth
       .signInWithEmailAndPassword(form.value.email, form.value.password)
       .then(response => {
@@ -48,7 +50,8 @@ export class LoginComponent implements OnInit {
         } else {
           this.toastr.error(errorMessage);
         }
-        console.log(error);
+        // console.log(error);
+        this.spin = false;
       });
   }
 

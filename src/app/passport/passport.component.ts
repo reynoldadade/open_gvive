@@ -12,6 +12,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class PassportComponent implements OnInit {
   passportData: IPassport;
   search = false;
+  spin = false;
   pictureSrc = 'https://image.flaticon.com/icons/svg/21/21104.svg';
   signatureSrc =
     // tslint:disable-next-line: max-line-length
@@ -34,6 +35,7 @@ export class PassportComponent implements OnInit {
 
   getPassportDetails(data) {
     this.search = false;
+    this.spin = true;
     this.gviveService.requestForCardDetails(data).subscribe(
       response => {
         console.log(response);
@@ -41,10 +43,12 @@ export class PassportComponent implements OnInit {
         this.pictureSrc = `data:image/png;base64,${response.result.picture}`;
         this.signatureSrc = `data:image/png;base64,${response.result.signature}`;
         this.search = true;
+        this.spin = false;
       },
       err => {
         console.log(err);
         this.toastr.error('Failed to connect to server');
+        this.spin = false;
       }
     );
   }

@@ -42,7 +42,7 @@
           class="btn btn-primary btn-block"
           [disabled]="loginForm.invalid"
         >
-          Login
+          Login <i class="fas fa-spin fa-spinner" *ngIf="spin"></i>
         </button>
         <button
           type="button"
