@@ -28,7 +28,7 @@ export class PassportComponent implements OnInit {
       idNumber: ['', Validators.required],
       idType: ['passport'],
       application: ['FILMS'],
-      user: ['testing'],
+      user: [sessionStorage.getItem('email')],
     });
   }
 

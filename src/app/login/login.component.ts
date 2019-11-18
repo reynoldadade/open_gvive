@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  passwordType = 'password';
+  iconType = 'fas fa-eye-slash';
   constructor(
     public afAuth: AngularFireAuth,
     private fb: FormBuilder,
@@ -35,6 +37,7 @@ export class LoginComponent implements OnInit {
         // this.router.navigate(['home']);
       })
       .catch(error => {
+        this.loginForm.reset();
         // this.toastr.error('Invalid user credentials');
         const errorCode = error.code;
         const errorMessage = error.message;
@@ -49,7 +52,9 @@ export class LoginComponent implements OnInit {
       });
   }
 
-  logout() {
-    this.afAuth.auth.signOut();
+  showHidePassword() {
+    this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
+    this.iconType =
+      this.iconType === 'fas fa-eye-slash' ? 'fas fa-eye' : 'fas fa-eye-slash';
   }
 }

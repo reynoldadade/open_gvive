@@ -25,7 +25,7 @@ export class VotersComponent implements OnInit {
       idNumber: ['', Validators.required],
       idType: ['voters'],
       application: ['FILMS'],
-      user: ['testing'],
+      user: [sessionStorage.getItem('email')],
     });
   }
 

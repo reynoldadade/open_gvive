@@ -1,3 +1,4 @@
+import { AuthGuardGuard } from './auth-guard.guard';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
@@ -12,20 +13,27 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
     path: 'home',
     component: HomeComponent,
   },
   {
     path: 'passport',
     component: PassportComponent,
+    canActivate: [AuthGuardGuard],
   },
   {
     path: 'voters',
     component: VotersComponent,
+    canActivate: [AuthGuardGuard],
   },
   {
     path: 'forgot-password',
     component: ForgotPasswordComponent,
+    canActivate: [AuthGuardGuard],
   },
 ];
 
