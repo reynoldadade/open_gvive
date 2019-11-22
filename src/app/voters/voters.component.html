@@ -11,7 +11,11 @@
             placeholder="Voter ID Here"
           />
         </div>
-        <button class="btn btn-primary btn-block" type="submit">
+        <button
+          class="btn btn-primary btn-block"
+          type="submit"
+          [disabled]="voterForm.invalid"
+        >
           Check Voters <i class="fas fa-spin fa-spinner" *ngIf="spin"></i>
         </button>
       </form>

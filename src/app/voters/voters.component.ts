@@ -7,7 +7,7 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-voters',
   templateUrl: './voters.component.html',
-  styleUrls: ['./voters.component.scss'],
+  styleUrls: ['./voters.component.scss']
 })
 export class VotersComponent implements OnInit {
   voterData: IVoter;
@@ -26,7 +26,7 @@ export class VotersComponent implements OnInit {
       idNumber: ['', Validators.required],
       idType: ['voters'],
       application: ['FILMS'],
-      user: [sessionStorage.getItem('email')],
+      user: [sessionStorage.getItem('email')]
     });
   }
 
