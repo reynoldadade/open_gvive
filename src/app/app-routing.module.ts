@@ -10,36 +10,35 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    component: LoginComponent,
+    component: LoginComponent
   },
   {
     path: 'login',
-    component: LoginComponent,
+    component: LoginComponent
   },
   {
     path: 'home',
     component: HomeComponent,
-    canActivate: [AuthGuardGuard],
+    canActivate: [AuthGuardGuard]
   },
   {
     path: 'passport',
     component: PassportComponent,
-    canActivate: [AuthGuardGuard],
+    canActivate: [AuthGuardGuard]
   },
   {
     path: 'voters',
     component: VotersComponent,
-    canActivate: [AuthGuardGuard],
+    canActivate: [AuthGuardGuard]
   },
   {
     path: 'forgot-password',
-    component: ForgotPasswordComponent,
-    canActivate: [AuthGuardGuard],
-  },
+    component: ForgotPasswordComponent
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}
