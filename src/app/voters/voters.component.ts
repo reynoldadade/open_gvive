@@ -38,14 +38,15 @@ export class VotersComponent implements OnInit {
         if (!response.result.pollingStation) {
           this.toastr.error('Person not found');
         } else {
-          // console.log(response);
+          console.log(response);
           this.voterData = response.result;
-          if (response.result.picture.substring(0, 5) === 'https') {
+          // console.log(response.result.picture.substr(0, 5), 'substring');
+          if (response.result.picture.substr(0, 5) === 'https') {
             this.pictureSrc = response.result.picture;
           } else {
             this.pictureSrc = `data:image/png;base64,${response.result.picture}`;
           }
-          this.pictureSrc = `data:image/png;base64,${response.result.picture}`;
+          // this.pictureSrc = `data:image/png;base64,${response.result.picture}`;
           this.search = true;
         }
         this.spin = false;

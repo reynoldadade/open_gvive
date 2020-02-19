@@ -1,0 +1,13 @@
+325b2a6,Reyold Osei Adade,Thu, 28 Nov 2019 08:51:34 +0000,reomoved route-gaurds from forgot password
+1ef177d,Reyold Osei Adade,Fri, 22 Nov 2019 13:06:32 +0000,cache changed
+1ca6fd5,Reyold Osei Adade,Fri, 22 Nov 2019 12:59:31 +0000,added a delay to clicks
+d6c35a0,Reyold Osei Adade,Mon, 18 Nov 2019 13:26:00 +0000,added spinners and added firebase hosting
+c6cebbd,Reyold Osei Adade,Mon, 18 Nov 2019 12:57:48 +0000,added menu controls
+2e972c1,Reyold Osei Adade,Mon, 18 Nov 2019 12:19:37 +0000,added route guards
+aa4f6f3,Reyold Osei Adade,Fri, 15 Nov 2019 17:28:42 +0000,put *ng-if on the search results
+7f90190,Reyold Osei Adade,Fri, 15 Nov 2019 16:07:56 +0000,added reset password
+b122a33,Reyold Osei Adade,Wed, 13 Nov 2019 17:23:12 +0000,set up new api link
+f0c43d4,Reyold Osei Adade,Tue, 12 Nov 2019 17:03:48 +0000,reinistalled prettier
+67b38cf,Reyold Osei Adade,Fri, 8 Nov 2019 17:24:09 +0000,set up services
+0e028be,Reyold Osei Adade,Fri, 8 Nov 2019 14:53:12 +0000,completed passport preparing to test  cors errors
+99027ec,Reyold Osei Adade,Fri, 8 Nov 2019 10:49:29 +0000,initial commit
